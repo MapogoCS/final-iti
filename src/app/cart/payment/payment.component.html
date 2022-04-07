@@ -1,0 +1,58 @@
+<app-header></app-header>
+<main class="page payment-page">
+  <section class="payment-form dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2>Payment</h2>
+      </div>
+      <div class="row">
+        <form class="col-6 p-0 m-0">
+          <div class="card-details shadow">
+            <h3 class="title">Choose Payment Method</h3>
+            <div class="row">
+              <p-radioButton
+                name="method"
+                value="cod"
+                [(ngModel)]="selectedValue"
+                inputId="cod"
+              ></p-radioButton>
+              <label for="cod">Cash On Delivery</label>
+              <!--p-radioButton
+                name="method"
+                value="other"
+                [(ngModel)]="selectedValue"
+                inputId="other"
+              ></p-radioButton>
+              <label for="other">Pay by Online Methods</label-->
+              <div class="form-group col-sm-12">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-block"
+                  (click)="checkMethod()"
+                >
+                  Submit Order
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="col-5 ms-5 shadow products">
+          <h3 class="title">Checkout</h3>
+          <div class="item" *ngFor="let item of addedProducts">
+            <p class="item-name">{{ item.name }}</p>
+            <span class="item-description ps-2">{{ item.count }}X </span>
+            <span class="price">{{ item.price - item.discount + "EGP" }}</span>
+
+            <br />
+          </div>
+
+          <div class="total">
+            Total Price:
+            <span class="total">{{ totalAmount | currency: "EGP" }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>

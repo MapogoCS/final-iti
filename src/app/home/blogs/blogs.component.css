@@ -1,0 +1,67 @@
+h1{
+    font-style: bold;
+  font-size: 2.5rem;
+  color: #B78D65;
+}
+
+a
+{
+    color: black;
+}
+
+.blogs_section .card-body{
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 8px;    
+}
+.blogs_section .btn1{
+    background-color: #B78D65;;
+    border: 1px solid #B78D65;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    padding: 6px 12px;
+    transition: all 0.5s ease;
+    font-size: 14px; 
+    text-decoration: none; 
+}
+.blogs_section .btn1:hover{
+    background-color: transparent;
+    color: #876445;
+}
+.blogs_section h3{
+    font-size: 20px;
+    color: black;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-family: "Nunito";
+}
+.blogs_section .card-body{
+    padding-bottom: 40px;
+}
+
+.blogs_section .card{
+    position: relative;    
+}
+.blogs_section .border{
+    position: relative;
+    width: 92%;
+    bottom: -3px;
+    right: 30px;
+    left: 30px;
+    height: 10px;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 2px;
+    transition: all 0.5s ease;
+}
+.blogs_section .border:hover{
+    height: 10px;
+    background: #cb985d;
+    bottom: -8px;
+      border: none;
+}
+
+
+

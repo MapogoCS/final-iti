@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+      <ngb-carousel  class="carousal col-lg-612 col-md-12 col-sm-12">
+          <ng-template ngbSlide *ngFor="let slider of sliderArray">
+            <div class="picsum-img-wrapper">
+              <img src="{{imagUrlSlider+slider.image}}" height="550px" width="100%" alt="Random first slide">
+            </div>
+            <div class="carousel-caption ">
+              <h3 class="d-flex justify-content-center"> Welcome To Homes </h3>
+            </div>
+          </ng-template>
+      </ngb-carousel>
+</div>
+</div>

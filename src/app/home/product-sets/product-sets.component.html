@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <div class="row">
+    <h2>Categories</h2>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let category of categoryArray">
+        <div class="one-item m-2">
+          <div class="img-overlay text-center fs-5 rounded">
+            <a (click)="goToCategoryProducts(category)">
+              <img src="{{imagUrlCategory+category.image}}" class="rounded category-img" alt="item" />
+            </a>
+            <div class="container-fluid">
+              <div class="row p-1">
+                <a (click)="goToCategoryProducts(category)" class="link-item text-decoration-none link-dark">
+                  <p class="text-center name-item p-0">{{category.name}}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>

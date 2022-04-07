@@ -1,0 +1,72 @@
+<app-navnar></app-navnar>
+<div 
+
+class="container mt-5">
+  <div class="row tm-content-row">
+
+                <!-- product  -->
+    <div class="col-12 tm-block-col" id="products">
+      <div class="tm-bg-primary-dark tm-block tm-block-products">
+        <h2 class="tm-block-title">Products</h2>
+
+        <div class="tm-product-table-container">
+          <table
+            class="table table-hover tm-table-small tm-product-table border"
+          >
+            <thead>
+              <tr >
+               
+                <th scope="col">NAME</th>
+                <th scope="col">Image</th>
+                <th scope="col">Color</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Price</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Description</th>
+                <th scope="col">short_desc</th>
+                <th scope="col">product_size</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of productArray">
+                <td>{{ i.name }}</td>
+                <td><img
+                  src="{{ imagUrlProduct + i.image }}"
+                  width="150" height="150"
+                  class="img-fluid rounded-start slider-img"
+                  alt="item"
+                  /></td>
+                  <td>{{ i.color }}</td>
+                  <td>{{ i.selling_price }}</td>
+                  <td>{{ i.brand }}</td>
+                <td>{{ i.discount_price }}</td>
+                <td>{{ i.description }}</td>
+                <td>{{ i.short_desc }}</td>
+                <td>{{ i.product_size }}</td>
+                <td class="text-center">
+                 <a>
+                  <mat-icon [routerLink]="['/update-product/', i.id]" >border_color</mat-icon>
+                </a>
+                </td>
+                <td class="text-center">
+                  <a>
+                  <mat-icon (click)="removeProdItem(i.id)">delete</mat-icon>
+                </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- table container -->
+        <div class="d-flex justify-content-center align-items-center btn-add">
+          <a
+            routerLink="/add-product"
+            class="btn btn-primary btn-block text-uppercase m-3"
+            >Add product</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

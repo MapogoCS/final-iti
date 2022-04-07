@@ -1,0 +1,102 @@
+.img-link {
+  transform: scale(1);
+  transition: all 0.2s ease;
+}
+.img-link:hover {
+  transform: scale(1.1);
+  border: thick double black;
+}
+.cart-button {
+  background-color: #876445 !important;
+  color: white;
+  transition: all 0.2s ease;
+}
+.cart-button:hover {
+  background-color: #cb985d !important;
+  color: black;
+}
+.img-overlay {
+  position: relative;
+  background-color: white;
+}
+.love {
+  position: absolute;
+  top: 5%;
+  left: 75%;
+  transition: all 0.1s ease;
+}
+.love:hover {
+  transform: scale(1.1);
+  color: red;
+}
+.love-red{
+  color:red;
+}
+.add-comment{
+  margin-top:5%;
+}
+.submit-btn{
+  background-color: #876445 !important;
+  color: white;
+  transition: all 0.2s ease;
+  border: 1px solid #876445;
+}
+.submit-btn:hover{
+  background-color: #cb985d !important;
+  color: black;
+  border: 1px solid #cb985d;
+}
+.submit-btn:enabled{
+  border:2px solid rgb(255, 174, 0);
+}
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  color: #d3d3d3;
+}
+.full {
+  color: rgb(255, 174, 0);
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: rgb(255, 174, 0);
+}
+.remove-rate{
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: red;
+  text-shadow: 2px black;
+}
+.avgrate{
+  position: relative;
+  display: inline-block;
+  color: #d3d3d3;
+  font-size: 1.5rem;
+}
+.show{
+  display:block;
+}
+.hide{
+  display:none;
+}
+.love {
+  position: absolute;
+  top: 5%;
+  left: 87%;
+  font-size: 1.5rem;
+  transition: all 0.1s ease;
+}
+.love:hover {
+  content: "";
+  transform: scale(1.1);
+  color: red;
+}
+.love-red{
+  color:red;
+}
+.img-overlay {
+  position: relative;
+}

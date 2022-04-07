@@ -1,0 +1,47 @@
+ h1{
+    font-style: bold;
+  font-size: 2.5rem;
+  color: #B78D65;
+}
+
+ h3{
+    font-size: 15px;
+    font-weight: 700;
+    color: #B78D65;
+}
+.cart_product
+{
+    border: 1px  #fff dashed;   
+}
+.cart_product:hover
+{
+    border: 1px  #B78D65 dashed;     
+}
+.card-text {
+    color:gray;
+    line-height: 2;
+   
+}
+
+
+
+.itemsproduct .btn1{
+    background-color: #B78D65;
+    border: 1px solid #B78D65;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    padding: 6px 12px;
+    transition: all 0.5s ease;
+    
+    text-decoration: none; 
+    
+}
+.itemsproduct .btn1:hover{
+    background-color: transparent;
+    color: #876445;
+}
+.butto
+{
+    margin: 30px;
+} 

@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg mt-4">
+  <div class="container">
+    <h2 class="title-page">Shopping cart</h2>
+  </div>
+  <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+  <div class="container">
+    <div class="row">
+      <main class="col-md-9">
+        <div class="card">
+          <app-cart-item
+            class="table table-borderless table-shopping-cart"
+          ></app-cart-item>
+          <div class="card-body border-top">
+            <a routerLink="/product-list" class="btn btn-light">
+              <i class="fa fa-chevron-left"></i> Continue shopping
+            </a>
+          </div>
+        </div>
+        <!-- card.// -->
+
+        <div class="alert alert-success mt-3">
+          <p class="icontext">
+            <i class="icon text-success fa fa-truck"></i> Free Delivery within
+            1-2 weeks
+          </p>
+        </div>
+      </main>
+      <!-- col.// -->
+      <aside class="col-md-3">
+        <!-- card .// -->
+        <div class="card">
+          <div class="card-body">
+            <dl class="dlist-align">
+              <dt class="mb-2">Total price:</dt>
+              <dd class="text-right">{{ AlltotalAmount | currency: "EGP" }}</dd>
+            </dl>
+            <dl class="dlist-align">
+              <dt class="mb-2">Discount:</dt>
+              <dd class="text-right">{{ totalDiscount | currency: "EGP" }}</dd>
+            </dl>
+            <dl class="dlist-align">
+              <dt class="mb-2">Total:</dt>
+              <dd class="text-right ">
+                {{
+                  AlltotalAmount - totalDiscount | currency: "EGP"
+                }}
+              </dd>
+            </dl>
+            <hr />
+            <p class="text-center mb-3">
+              <a routerLink="/payment" class="btn btn-primary float-md-right">
+                Make Purchase
+              </a>
+            </p>
+          </div>
+          <!-- card-body.// -->
+        </div>
+        <!-- card .// -->
+      </aside>
+      <!-- col.// -->
+    </div>
+  </div>
+  <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+
+
+<app-footer></app-footer>

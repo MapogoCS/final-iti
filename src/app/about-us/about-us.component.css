@@ -1,0 +1,70 @@
+ 
+.about-section{
+    background-size: 55%;
+    background-image: url('src/assets/images/aboutus.jpeg');
+    background-repeat: no-repeat;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    margin-bottom: 3%;
+    margin-top:3%;
+   
+}
+ 
+.inner-container{
+    width: 55%;
+   position: relative;
+   left:22%;
+    background-color: #fdfdfd;
+    padding: 120px;
+}
+.inner-container h1{
+   
+    font-size: 30px;
+    font-weight: 900;
+    color: #876445;
+}
+ 
+.text{
+    font-family: "Nunito";
+    font-size: 17px;
+    color: #545454;
+     line-height: 30px; 
+    text-align: justify;
+ 
+}
+
+@media all and (max-width: 980px) {
+    .inner-container{
+        position: static;
+        width: 100%;
+        padding:3%;
+    }
+    .about-section{
+        background-size: cover;
+        background-image: url('src/assets/images/aboutus.jpeg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #fdfdfd;
+        overflow: hidden;
+        margin-bottom: 3%;
+        margin-top:3%;
+       
+    }
+}
+@media all and (max-width: 1178px) {
+    .inner-container{
+        position: static;
+        width: 70%;
+    }
+    .about-section{
+        background-size: cover;
+        background-image: url('src/assets/images/aboutus.jpeg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #fdfdfd;
+        overflow: hidden;
+        margin-bottom: 3%;
+        margin-top:3%;
+       
+    }
+}

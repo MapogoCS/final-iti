@@ -1,0 +1,41 @@
+* {
+  font-family: "Nunito";
+  padding: 0px;
+  margin: 0px;
+}
+
+.carousal {
+  transition: all 0.5s ease;
+}
+h3 {
+  font-size: 3rem;
+  text-shadow: 2px 2px #cb985d;
+}
+.carousel-caption {
+  font-weight: 900;
+  margin-bottom: 20px;
+  width: 50%;
+  height: 25px;
+  position: absolute;
+  top: 31%;
+  left: 24%;
+}
+button {
+  background-color: #876445bf;
+  font-size: 30px;
+  color: white;
+  border: none;
+
+  width: 18%;
+  margin: 0 auto;
+  padding: 10px;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 80%;
+  left: 38%;
+}
+button:hover {
+  background-color: #cb985d;
+  color: white;
+  cursor: pointer;
+}

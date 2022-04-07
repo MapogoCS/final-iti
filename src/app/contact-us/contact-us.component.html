@@ -1,0 +1,131 @@
+<app-header></app-header>
+
+<div
+  class="container-contact100 d-flex justify-content-center align-items-center"
+>
+  <div
+    class="wrap-contact100 row shadow-lg rounded d-flex justify-content-center align-items-center m-5"
+  >
+    <div class="form-content col-xl-5 col-lg-5 col-sm-12 col-md-12 p-5">
+      <!-- alert -->
+    
+      <form
+        [formGroup]="formRegistration"
+        (ngSubmit)="getFormData(formRegistration)"
+        action="#"
+        method="post"
+      >
+        <span class="contact100-form-title"> Get in touch </span>
+        <div class="row">
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              formControlName="firstname"
+              type="text"
+              placeholder="First Name"
+            />
+            <span
+            *ngIf="
+              formRegistration.get('firstname')?.invalid &&
+              formRegistration.get('firstname')?.touched
+            "
+            class="m-3 p-2 text-danger"
+            >name should be more than 3 char
+          </span>
+            <span class="focus-input100"></span>
+          </div>
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              formControlName="lastname"
+              type="text"
+              placeholder="Last Name"
+            />
+            <span
+            *ngIf="
+              formRegistration.get('lastname')?.invalid &&
+              formRegistration.get('lastname')?.touched
+            "
+            class="m-3 p-2 text-danger"
+            >name should be more than 3 char
+          </span>
+            <span class="focus-input100"></span>
+          </div>
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              formControlName="email"
+              type="text"
+              placeholder="Email"
+            />
+            <span
+            *ngIf="
+              formRegistration.get('email')?.invalid &&
+              formRegistration.get('email')?.touched
+            "
+            class="m-3 p-2 text-danger"
+            >please enter valide email
+          </span>
+            <span class="focus-input100"></span>
+          </div>
+          <div class="wrap-input100">
+            <textarea
+              class="input100"
+              formControlName="message"
+              placeholder="Message"
+              col="15"
+              rows="5"
+            >
+            </textarea>
+            <span class="focus-input100"></span>
+          </div>
+          <div class="container ">    
+            <div class="row">
+              <div [ngClass]="{'show-alert':dangerAlertShow,'hide-alert':!dangerAlertShow}"
+               class="alert alert-danger col-11 m-2 p-2 " role="alert">
+                Please Enter Valid Data
+              </div>
+              <div [ngClass]="{'show-alert':SuccessAlertShow,'hide-alert':!SuccessAlertShow}" 
+              class="alert alert-success col-11 m-2 p-2" role="alert">
+                 Your Message Sent Successfully
+              </div>
+            <div class="container-contact100-form-btn pt-4" >
+              <button type="submit" class="btn contact100-form-btn btn-block text-uppercase" 
+             >
+                Send </button>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="icon-content col-xl-5 col-lg-5 col-sm-12 col-md-12 p-5">
+      <div
+        class="row info_data container d-flex justify-content-center align-items-center"
+      >
+        <div class="info col-xl-12 col-lg-12 col-sm-12 col-md-12 mb-4 p-3">
+          <i class="fas fa-home" style="font-size: 2rem; color: #cb985d"></i>
+          <p class="d-inline">Maadi-Cairo-Egypt</p>
+        </div>
+        <div class="info col-xl-12 col-lg-12 col-sm-12 col-md-12 mb-4 p-3">
+          <i
+            class="fa-solid fa-mobile-screen-button"
+            style="font-size: 2rem; color: #cb985d"
+          ></i>
+          <p class="d-inline">(+02) 01147783654</p>
+        </div>
+        <div class="info col-xl-12 col-lg-12 col-sm-12 col-md-12 mb-4 p-3">
+          <i
+            class="fas fa-envelope"
+            style="font-size: 2rem; color: #cb985d"
+          ></i>
+
+          <p class="d-inline">Homo123@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

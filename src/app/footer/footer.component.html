@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <footer class="pt-5">
+    <div class="row ">
+      <div class="col-lg-3 col-md-3 col-6">
+        <h3>Main</h3>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a href="/home" routelink="/home" class="nav-link p-0 ">Home</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="/product-list" routelink="/product-list" class="nav-link p-0 ">Products</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="/contactUs" routelink="/contactUs" class="nav-link p-0 ">Contact Us</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="/aboutUs" routelink="/aboutUs" class="nav-link p-0 ">About us</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-3 col-6">
+        <h3>Category</h3>
+        <ul class="nav flex-column">
+          <li *ngFor="let category of categoryArray">
+            <a (click)="goToCategoryProducts(category)"
+              >{{ category.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="col-lg-4 col-md-4 col-sm-12 ">
+        <h4>Subscribe to get emails about our latest products</h4>
+        <!--p>Monthly digest of whats new and exciting from us.</p-->
+        <form 
+        [formGroup]="formSubscription"
+        (ngSubmit)="getFormData(formSubscription)"
+        >
+        <div class="row">
+       
+          <div class="col-lg-6 col-md-6 col-sm-12">
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                placeholder="Email address"
+                formControlName="Email"
+              />
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+              <button class="btn "type="submit">Subscribe</button>
+              <p-progressSpinner class="spinner" [ngClass]="{'show':isLoading,'hide':!isLoading}"></p-progressSpinner>
+         </div>
+         <div *ngIf="failedAlert" class="alert alert-danger" role="alert">Enter a Valid Email</div>
+         <div *ngIf="subscribedAlert" class="alert alert-success" role="alert">Subscribed Successfully</div>
+         <div *ngIf="existedEmailAlert" class="alert alert-success" role="alert">Email Already Existed</div>
+        </div>
+      </form>
+     </div>
+    </div>
+
+    <div class=" p-5 mt-4 border-top row ml-5">
+      <p class="d-flex justify-content-center align-items-center  ">&copy; 2022 Company, Inc. All rights reserved.</p>
+      
+      
+    </div>
+  </footer>
+</div>

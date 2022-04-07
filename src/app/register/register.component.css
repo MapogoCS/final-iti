@@ -1,0 +1,40 @@
+.con {
+  width: 100%;
+  height: 100vh;
+  font-family: "Nunito";
+  font-weight: 900;
+  color: white;
+  /* background-image: url('src/assets/images/log3.jpeg'); */
+}
+.cart {
+  padding: 30px 50px;
+  background-image: linear-gradient(270deg, #876445, #cb985d);
+}
+.cart h3 {
+  color: #fff;
+}
+label {
+  color: #fff;
+}
+.btn_signup {
+  background-color: #775130;
+  width: 100%;
+  border: none;
+  color: #fff;
+  margin: 5px auto;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+.btn_signup:disabled {
+  background-color: #cb985d;
+}
+.btn_signup:enabled:hover {
+  background-color: #cb985d;
+  cursor: pointer;
+}
+.show-alert {
+  display: block;
+}
+.hide-alert {
+  display: none;
+}

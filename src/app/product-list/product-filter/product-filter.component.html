@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <h2 class="m-3">Filter By</h2>
+    <div class="d-flex justify-content-start flex-wrap">
+      <div>
+        <mat-form-field class="me-2" appearance="fill">
+          <mat-label>Category</mat-label>
+          <mat-select
+            (selectionChange)="onCategoryChange($event)"
+            [(ngModel)]="categoryInitial"
+          >
+            <mat-option value="">All</mat-option>
+
+            <mat-option
+              *ngFor="let category of categoryArray"
+              [value]="category.id"
+            >
+              {{ category.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="me-2" appearance="fill">
+          <mat-label>Item</mat-label>
+          <mat-select
+            (selectionChange)="onSubCategoryChange($event)"
+            [(ngModel)]="subcatInitial"
+          >
+            <mat-option value="">All</mat-option>
+            <mat-option
+              *ngFor="let sub_category of subcategoryArray"
+              [value]="sub_category.id"
+            >
+              {{ sub_category.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="me-2" appearance="fill">
+          <mat-label>Color</mat-label>
+          <mat-select
+            (selectionChange)="onColorChange($event)"
+            [(ngModel)]="colorInitial"
+          >
+            <mat-option value="">All</mat-option>
+            <mat-option *ngFor="let color of colors" [value]="color">
+              {{ color }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="me-2" appearance="fill">
+          <mat-label>Price</mat-label>
+          <mat-select
+            (selectionChange)="onPriceChange($event)"
+            [(ngModel)]="priceInitial"
+          >
+            <mat-option value="">All</mat-option>
+            <mat-option *ngFor="let price of prices" [value]="price">
+              {{ price }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button class="btn btn-primary mb-3 ms-5" (click)="resetFilters()">
+          Reset Filters
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

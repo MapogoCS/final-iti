@@ -1,0 +1,67 @@
+
+.container{
+    font-family: "Nunito";
+}
+.icon
+{
+    background-color: grey;
+    width: 12rem; 
+    height: 12rem;
+}
+.card
+{
+    width: 15rem; 
+}
+.favourits
+{
+    
+    width: 15rem; 
+    height: 20rem;
+    color: #876445;
+}
+.fav-items li
+{
+    color: #876445;
+    font-size:1.25rem;
+}
+input
+{
+    width: 50%;
+}
+.user-info
+{
+    outline: none;
+    border:none;
+    font-weight: bold;
+}
+.btn{
+    background-color: #876445;
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    border: none;
+}
+.btn:hover {
+    background-color: #cb985d;
+    color: white;
+    cursor: pointer;
+}
+.card-shadow{
+    box-shadow: 1px 1px 25px #876445;
+}
+.cart{
+    background-color: #876445;
+}
+.cart:hover {
+    background-color: #cb985d;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+input[type="text"][disabled] {
+    
+    background-color: white;
+    font-size: 15px;
+    font-style: normal;
+ }

@@ -1,0 +1,59 @@
+<table class="table table-borderless table-shopping-cart">
+  <thead class="text-muted">
+    <tr class="small text-uppercase">
+      <th scope="col">Product</th>
+      <th scope="col" width="120">Quantity</th>
+      <th scope="col" width="120">Price</th>
+      <th scope="col" class="text-right" width="200"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of addedProducts">
+      <td>
+        <figure class="itemside">
+          <div class="aside">
+            <img
+              src="{{ imagUrlProduct + item.image }}"
+              class="img-sm"
+              width="60"
+              height="60"
+            />
+          </div>
+          <figcaption class="info mt-3">
+            <p class="title text-dark"> {{ item.name }} </p>
+           
+          </figcaption>
+        </figure>
+      </td>
+      <td>
+        <div class="field col-12 md:col-3">
+          <label for="{{ item.id }}"></label>
+          <p-inputNumber
+            [(ngModel)]="item.count"
+            (onInput)="changeItemSitus(item, $event.value)"
+            id="{{ item.id }}"
+            mode="decimal"
+            [showButtons]="true"
+            inputId="{{ item.id }}"
+            [min]="1"
+            [max]="100"
+            [size]="2"
+          >
+          </p-inputNumber>
+        </div>
+      </td>
+      <td>
+        <div class="price-wrap">
+          <var class="price pt-4">{{
+            item.price - item.discount | currency: "EGP"
+          }}</var>
+          <!-- <small class="text-muted">{{ totalAmount }} </small> -->
+        </div>
+        <!-- price-wrap .// -->
+      </td>
+      <td class="text-right">
+        <a class="btn-hover btn btn-light" (click)="removeCartItem(item)"> Remove</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,144 @@
+<div class="img-overlay text-end fs-5 rounded" height="530px">
+  <a (click)="goTodetails(productItem)">
+    <img
+      src="{{ imagUrlProduct + productItem.image }}"
+      class="card-img-top rounded-top"
+      alt="item"
+      width="150"
+      height="350"
+    />
+  </a>
+
+  <div
+    class="love"
+    (click)="addOrRemoveWishlist()"
+    [ngClass]="{ 'love-red': item_hearted }"
+  >
+    <i class="fa-solid fa-heart"></i>
+  </div>
+  <div class="container-fluid">
+    <div class="row p-3">
+      <a
+        (click)="goTodetails(productItem)"
+        class="link-item text-decoration-none link-dark"
+      >
+        <p class="text-center name-item p-0">{{ productItem.name }}</p>
+        <p
+          class="text-center"
+          [ngClass]="{
+            show: !productItem.discount_price,
+            hide: productItem.discount_price
+          }"
+        >
+          {{ calculatePrice(productItem) }} EGP
+        </p>
+        <p
+          class="text-center"
+          [ngClass]="{
+            show: productItem.discount_price,
+            hide: !productItem.discount_price
+          }"
+        >
+          <del>{{ productItem.selling_price }}</del>
+          {{ calculatePrice(productItem) }} EGP
+        </p>
+      </a>
+
+      <div class="buttons d-flex justify-content-between">
+        <p-confirmDialog
+          [style]="{ width: '50vw' }"
+          [baseZIndex]="10000"
+        ></p-confirmDialog>
+        <button
+          class="col-6 btn button-item rounded me-1"
+          (click)="onItemAdded(productItem)"
+        >
+          Add to cart
+        </button>
+
+        <button class="col-6 btn button-item rounded" (click)="openLg(content)">
+          More details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<!-- /////////////////////////////////////////////////////// -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-basic-title">Product details</h3>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="card mb-3 border border-white" style="max-width: 540px">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="{{ imagUrlProduct + productItem.image }}"
+            class="img-fluid rounded-start"
+            alt="item"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h4 class="card-title">{{ productItem.name }}</h4>
+            <h5
+              class="card-title"
+              [ngClass]="{
+                show: !productItem.discount_price,
+                hide: productItem.discount_price
+              }"
+            >
+              {{ calculatePrice(productItem) }} EGP
+            </h5>
+            <h5
+              class="card-title"
+              [ngClass]="{
+                show: productItem.discount_price,
+                hide: !productItem.discount_price
+              }"
+            >
+              <del>{{ productItem.selling_price }}</del>
+              {{ calculatePrice(productItem) }} EGP
+            </h5>
+            <p class="card-text">
+              {{ productItem.description }}
+            </p>
+            <p class="card-text">
+              <small class="text-muted">{{ productItem.short_desc }}</small>
+              <br />
+              <small class="text-muted"
+                >Size: {{ productItem.product_size }}</small
+              ><br />
+              <small class="text-muted"
+                >In Stock: {{ productItem.product_qty }}</small
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn-hover btn btn-outline-dark me-2"
+      (click)="onItemAdded(productItem)"
+    >
+      Add to cart
+    </button>
+    <button
+      type="button"
+      class="btn-hover btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>

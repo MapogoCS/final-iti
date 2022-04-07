@@ -1,0 +1,176 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row m-3">
+    <div class="col-lg-6 col-md-7 col-12 img-overlay">
+      <img
+        src="{{ imagUrlProduct + productDetails.image }}"
+        width="500"
+        height="500"
+        alt="img 1"
+      />
+      <div
+        class="love"
+        (click)="addOrRemoveWishlist()"
+        [ngClass]="{ 'love-red': item_hearted }"
+      >
+        <i class="fa-solid fa-heart"></i>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-5 col-12">
+      <h1>{{ productDetails.name }}</h1>
+      <h3
+        [ngClass]="{
+          show:
+            !productDetails.discount_price ||
+            +productDetails.discount_price == 0,
+          hide:
+            productDetails.discount_price && +productDetails.discount_price != 0
+        }"
+      >
+        {{ calculatePrice(productDetails) }} EGP
+      </h3>
+      <h3
+        [ngClass]="{
+          show:
+            productDetails.discount_price &&
+            +productDetails.discount_price != 0,
+          hide:
+            !productDetails.discount_price ||
+            +productDetails.discount_price == 0
+        }"
+      >
+        <del>{{ productDetails.selling_price }}</del>
+        {{ calculatePrice(productDetails) }} EGP
+      </h3>
+      <p-confirmDialog
+        [style]="{ width: '50vw' }"
+        [baseZIndex]="10000"
+      ></p-confirmDialog>
+      <button
+        class="cart-button btn mb-4"
+        (click)="onItemAdded(productDetails)"
+      >
+        Add to cart
+      </button>
+      <!-- <h3>Rate this product</h3> -->
+      <div class="row justify-content-between">
+        <div class="col-6">
+          <ng-template #t let-fill="fill">
+            <span class="star" [class.full]="fill === 100">
+              <span class="half" [style.width.%]="fill">&starf;</span>&starf;
+            </span>
+          </ng-template>
+          <p><strong>Rate This Product:</strong></p>
+          <ngb-rating
+            class="pt-2"
+            [(ngModel)]="ratingVal"
+            (click)="getFormData(ratingVal)"
+            [starTemplate]="t"
+            [readonly]="false"
+            [max]="5"
+          ></ngb-rating>
+        </div>
+      </div>
+      <h3 class="mt-4">Product Details</h3>
+
+      <table style="width: 100%">
+        <tr>
+          <th>Description:</th>
+          <td>{{ productDetails.description }}</td>
+        </tr>
+        <tr>
+          <th>Stock:</th>
+          <td>{{ productDetails.product_qty }}</td>
+        </tr>
+        <tr>
+          <th>Brand Name:</th>
+          <td>{{ productDetails.brand }}</td>
+        </tr>
+        <tr>
+          <th>Color:</th>
+          <td>{{ productDetails.color }}</td>
+        </tr>
+        <tr>
+          <th>Dimensions:</th>
+          <td>{{ productDetails.product_size }}</td>
+        </tr>
+        <tr>
+          <th>Rate: ({{ productDetails.avgRate }})</th>
+          <ng-template #b let-fill="fill">
+            <span class="avgrate" [class.full]="fill === 100">
+              <span class="half" [style.width.%]="fill">&starf;</span>&starf;
+            </span>
+          </ng-template>
+          <td class="pt-2">
+            <ngb-rating
+              [(rate)]="productDetails.avgRate"
+              [starTemplate]="b"
+              [readonly]="true"
+              [max]="5"
+            ></ngb-rating>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="my-3 col-6 rate-comment"></div>
+  </div>
+  <div class="row m-3 justify-content-between"></div>
+  <div class="row">
+    <h3>Relative products</h3>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let item of relativeProduct">
+        <div class="one-item m-2" (click)="goTodetails(item)">
+          <div class="img-overlay text-center fs-5 rounded">
+            <a>
+              <img
+                src="{{ imagUrlProduct + item.image }}"
+                class="rounded"
+                width="100"
+                height="200"
+                alt="item"
+              />
+            </a>
+            <!--div
+              class="love"
+              (click)="item_hearted = !item_hearted"
+              [ngClass]="{ 'love-red': item_hearted }"
+            >
+              <i class="fa-solid fa-heart"></i>
+            </div-->
+            <div class="container-fluid">
+              <div class="row p-1">
+                <a href="#" class="link-item text-decoration-none link-dark">
+                  <p class="text-center name-item p-0">{{ item.name }}</p>
+                  <p
+                    [ngClass]="{
+                      show: !item.discount_price,
+                      hide: item.discount_price
+                    }"
+                  >
+                    {{ calculatePrice(item) }} EGP
+                  </p>
+                  <p
+                    [ngClass]="{
+                      show: item.discount_price,
+                      hide: !item.discount_price
+                    }"
+                  >
+                    <del>{{ item.selling_price }}</del>
+                    {{ calculatePrice(item) }} EGP
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>
+<div
+  id="carouselExampleDark"
+  class="carousel carousel-dark slide"
+  data-bs-ride="carousel"
+></div>
+<app-footer></app-footer>
