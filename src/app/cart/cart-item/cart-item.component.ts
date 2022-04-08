@@ -18,7 +18,7 @@ export class CartItemComponent implements OnInit {
   value20: number = 1;
   cartitem!: Product;
   counterValue: number = 0;
-  imagUrlProduct: string = 'https://furniture-eg.herokuapp.com/public/uploads/product/';
+  imagUrlProduct: string = 'https://furniture-eg.herokuapp.com/uploads/product/';
   constructor(private cartService: CartService, private router: Router) {}
   ngOnInit(): void {
     // this.cartList = this.productCartService.getProducts();
